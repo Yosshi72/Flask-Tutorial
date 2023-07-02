@@ -7,6 +7,9 @@
 </head>
 <body>
     <h1>Flask Tutorial</h1>
+
+    <a href="/logout"> Log Out</a>
+
     {% if name == "kiyokiyo" %}
     <h1>special</h1>
     {% elif name %}
@@ -14,10 +17,6 @@
     {% else %}
     <h1>normal</h1>
     {% endif %}
-    <form action="/index" method="POST">
-        <input type="text" name="name" placeholder="Enter Name">
-        <input type="submit" value="Submit">
-    </form>
 
     <img src="static/images/topo.png" alt="topology">
 
@@ -27,14 +26,14 @@
         <input type="submit" value="Add">
     </form>
 
-    <form action="/delete" method="POST" id="delete">
-        <input type="submit" value="Delete all checked elements">
-    </form>
-
     <form action="/update" method="POST" id="update">
         <input type="text" name="title" placeholder="Topology Name">
         <input type="text" name="body" placeholder="Explain this topology">
         <input type="submit" value="Update">
+    </form>
+
+    <form action="/delete" method="POST" id="delete">
+        <input type="submit" value="Delete all checked elements">
     </form>
 
     {% for topo in topos %}
